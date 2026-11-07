@@ -3428,7 +3428,8 @@
               {"name": "Nachmund Gauntlet", "id": "a1e8-4bda-9200-f7c7", "hidden": false, "import": true, "sortIndex": 3, "type": "upgrade"},
               {"name": "Armageddon", "id": "fd80-17e3-3c1a-6570", "hidden": false, "import": true, "sortIndex": 2, "type": "upgrade"},
               {"name": "Pariah Nexus", "id": "0e83-84fd-f2a7-223c", "hidden": false, "import": true, "sortIndex": 4, "type": "upgrade"},
-              {"name": "No GW Campaign", "id": "bce6-d51c-3e40-4fcd", "hidden": false, "import": true, "sortIndex": 1, "type": "upgrade"}
+              {"name": "No GW Campaign", "id": "bce6-d51c-3e40-4fcd", "hidden": false, "import": true, "sortIndex": 1, "type": "upgrade"},
+              {"name": "Punch-Jokaero Crusade", "id": "f510-c405-d460-19bc", "hidden": false, "import": true, "sortIndex": 6, "type": "upgrade"}
             ]
           }
         ]
