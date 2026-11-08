@@ -3295,6 +3295,34 @@
                   {"field": "4846-14da-105b-0ef6", "type": "set", "value": 0},
                   {"field": "name", "type": "set", "value": "White Dwarf content is enabled"}
                 ]
+              },
+              {
+                "name": "Show Punch-Jokaero content",
+                "id": "d570-e403-5690-ab60",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "categoryLinks": [{"name": "Configuration", "id": "49da-447d-c717-f883", "hidden": false, "primary": true, "targetId": "4ac9-fd30-1e3d-b249"}],
+                "constraints": [
+                  {
+                    "id": "3232-da8d-2c9e-35b6",
+                    "field": "selections",
+                    "includeChildForces": false,
+                    "includeChildSelections": false,
+                    "percentValue": false,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "min",
+                    "value": 1
+                  },
+                  {"id": "aab0-961b-a08f-7993", "field": "selections", "scope": "parent", "shared": true, "type": "min", "value": 1},
+                  {"id": "02f1-9381-a92f-dced", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}
+                ],
+                "modifiers": [
+                  {"field": "3232-da8d-2c9e-35b6", "type": "set", "value": 0},
+                  {"field": "aab0-961b-a08f-7993", "type": "set", "value": 0},
+                  {"field": "name", "type": "set", "value": "Punch-Jokaero Crusade content is enabled"}
+                ]
               }
             ]
           },
@@ -10277,6 +10305,1673 @@
                 ]
               }
             ]
+          },
+          {
+            "name": "Punch-Jokaero Battle Traits",
+            "id": "c5e2-d77e-0421-d558",
+            "collapsible": true,
+            "hidden": false,
+            "modifiers": [
+              {
+                "field": "hidden",
+                "type": "set",
+                "value": true,
+                "conditions": [
+                  {
+                    "childId": "d570-e403-5690-ab60",
+                    "childName": "Show Punch-Jokaero content",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "roster",
+                    "shared": true,
+                    "type": "lessThan",
+                    "value": 1
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Precision Insertion",
+                "id": "12e7-63f9-eb8f-78da",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 24,
+                "type": "upgrade",
+                "constraints": [{"id": "9c77-8ce0-705c-3d20", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifiers": [
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Precision Insertion",
+                    "id": "d148-a40b-f2ee-1e9b",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "Once per battle, after this unit is setup after performing an Ingress move, this unit may perform a normal move of up to 3\", and may end this move within 8\" of an enemy unit but not within engagement range of an enemy unit.\n\nThis unit may not perform a charge move in a turn that it uses this ability.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Reinforced Armour",
+                "id": "b820-7a92-de6b-5522",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "6838-e543-13a2-9aed", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifierGroups": [
+                  {
+                    "type": "and",
+                    "modifiers": [
+                      {
+                        "affects": "self.entries.group.recursive.profiles.Unit",
+                        "field": "annotation",
+                        "join": ", ",
+                        "scope": "root-entry",
+                        "skipIfPresent": "Reinforced Armour",
+                        "type": "append",
+                        "value": "Reinforced Armour"
+                      },
+                      {"affects": "self.entries.group.recursive.profiles.Unit", "field": "750a-a2ec-90d3-21fe", "join": ", ", "scope": "root-entry", "type": "increment", "value": 2}
+                    ]
+                  }
+                ],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "9693-cf84-fe69-37a9",
+                            "field": "selections",
+                            "includeChildForces": false,
+                            "includeChildSelections": false,
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "notInstanceOf",
+                            "value": 1
+                          },
+                          {
+                            "childId": "dbd4-63-af05-998",
+                            "field": "selections",
+                            "includeChildForces": false,
+                            "includeChildSelections": false,
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "notInstanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Reinforced Armour",
+                    "id": "43ba-7e4a-d85a-0d09",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "Each time an attack with a Damage Characteristic of 1 is allocated to a model in this unit, worsent the Armour Penetration characteristic of that attack by 1.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Grim Survivors",
+                "id": "5302-8853-b9af-8080",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 7,
+                "type": "upgrade",
+                "constraints": [{"id": "1d1a-ba0d-2355-5db8", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditions": [
+                      {
+                        "childId": "cf47-a0d7-7207-29dc",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "scope": "parent",
+                        "shared": true,
+                        "type": "notInstanceOf",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Grim Survivors",
+                    "id": "a958-80b7-cf9a-631a",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "Once per battle, at the start of any phase, this unit can use this Battle Trait. If it does, until the end of the phase, models in this unit have the Feel No Pain 5+ ability. If this unit is Below Half-strength when this Battle Trait is used, then until the end of the phase, models in this unit have the Feel No Pain 4+ ability instead.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Drop Zone Defenders",
+                "id": "09ec-3b28-d390-d613",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 8,
+                "type": "upgrade",
+                "constraints": [{"id": "8b03-a977-e51e-8b45", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditions": [
+                      {
+                        "childId": "cf47-a0d7-7207-29dc",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "scope": "parent",
+                        "shared": true,
+                        "type": "notInstanceOf",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Drop Zone Defenders",
+                    "id": "87c1-473f-af26-5ab7",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "After this unit performs an Ingress move, until the beginning of your next Command Phase, if one or more units with this ability are selected as a target of that a charge, subtract 2 from the charge roll (up to a maximum cumulative modifier of -2).",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Strikemasters",
+                "id": "38d1-a31d-4955-629d",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 10,
+                "type": "upgrade",
+                "constraints": [{"id": "c2d5-e153-9694-7692", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditions": [
+                      {
+                        "childId": "cf47-a0d7-7207-29dc",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "scope": "parent",
+                        "shared": true,
+                        "type": "notInstanceOf",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Strikemasters",
+                    "id": "8f8e-b835-6752-0885",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "In the Declare Battle Formations step, you can spend 1 Requisition point; if you do, then until the end of the battle, this unit has the Deep Strike ability.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Tempered In Battle",
+                "id": "2faf-f37c-8ef6-9a57",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 11,
+                "type": "upgrade",
+                "constraints": [{"id": "2900-c9e5-d100-90bf", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditions": [
+                      {
+                        "childId": "cf47-a0d7-7207-29dc",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "scope": "parent",
+                        "shared": true,
+                        "type": "notInstanceOf",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Tempered In Battle",
+                    "id": "eb49-901e-23a6-d119",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "Once per battle, in your Command phase, this unit can use this Battle Trait. If it does, until the end of the turn, this unit is eligible to shoot, and perform an Action in a turn in which it Advanced or Fell Back.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Fleet of Foot",
+                "id": "6493-b78a-a074-87d9",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 12,
+                "type": "upgrade",
+                "constraints": [{"id": "474b-c538-4936-e7ca", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditions": [
+                      {
+                        "childId": "cf47-a0d7-7207-29dc",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "scope": "parent",
+                        "shared": true,
+                        "type": "notInstanceOf",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Fleet of Foot",
+                    "id": "a30a-a906-b3b5-3c62",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "You can re-roll Advance rolls for this unit. In addition, if this unit is selected to Advance, until the end of the turn, enemy units cannot use the Fire Overwatch Stratagem to shoot at this unit.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Territorial",
+                "id": "e4da-2c15-10b3-edbc",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 9,
+                "type": "upgrade",
+                "constraints": [{"id": "af2b-81de-9670-3192", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditions": [
+                      {
+                        "childId": "cf47-a0d7-7207-29dc",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "scope": "parent",
+                        "shared": true,
+                        "type": "notInstanceOf",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Territorial",
+                    "id": "41e1-e8db-6590-a4f8",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "Each time a model in this unit makes an attack that targets a unit is within range of an objective marker, re-roll a Wound roll of 1.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Cavalry Outriders",
+                "id": "87fb-141d-86b1-443f",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 13,
+                "type": "upgrade",
+                "constraints": [{"id": "6d67-8fe6-7d24-882b", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditions": [
+                      {
+                        "childId": "14a0-40c9-2748-ae6e",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "notInstanceOf",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  },
+                  {"affects": "group", "field": "add-info", "scope": "root-entry", "type": "add", "value": "08fb-4cb5-36fb-d638"}
+                ],
+                "profiles": [
+                  {
+                    "name": "Cavalry Outriders",
+                    "id": "10bc-ab5b-99ec-8074",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "This unit has the Scouts 6\" ability. If this unit already has Scouts X, improve the value of X by 3\".",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Evasive",
+                "id": "5073-859d-a42a-9245",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 14,
+                "type": "upgrade",
+                "constraints": [{"id": "a885-dd8d-8459-7e7b", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditions": [
+                      {
+                        "childId": "14a0-40c9-2748-ae6e",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "notInstanceOf",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Evasive",
+                    "id": "f7c6-4dc3-8ec3-1a2d",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "Each time a ranged attack is allocated to a model in this unit, provided this unit did not Remain Stationary in your previous turn, worsen the Armour Penetration characteristic of that attack by 1.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Shock Cavalry",
+                "id": "e5bd-0775-7d1f-1eb3",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 15,
+                "type": "upgrade",
+                "constraints": [{"id": "0261-7289-bdfd-c275", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditions": [
+                      {
+                        "childId": "14a0-40c9-2748-ae6e",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "notInstanceOf",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Shock Cavalry",
+                    "id": "281e-8754-8b5f-2d08",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "Each time a model in this unit makes an attack that targets an enemy unit that is below its Starting Strength, add 1 to the Hit roll. In addition, each time a model in this unit makes an attack that targets an enemy unit that is Below Half-strength, add 1 to the Wound roll.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Sleek Interceptors",
+                "id": "5a24-02df-6040-19dd",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 16,
+                "type": "upgrade",
+                "constraints": [{"id": "054a-a7d3-661f-da2f", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditions": [
+                      {
+                        "childId": "dda2-bb0a-215e-ad9c",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "notInstanceOf",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Sleek Interceptors",
+                    "id": "fcaf-d48e-f192-ca08",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "Each time this unit Advances, do not make Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Fiery Descent",
+                "id": "5d02-681b-c771-184a",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 17,
+                "type": "upgrade",
+                "constraints": [{"id": "c88b-7e66-685b-9390", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditions": [
+                      {
+                        "childId": "dda2-bb0a-215e-ad9c",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "notInstanceOf",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Fiery Descent",
+                    "id": "ffcb-3710-5768-623e",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "Once per battle after this unit performs an Ingress Move, this unit may roll one D6 for each visible enemy unit within 9\" of this unit and roll one D6, on a 4+ that enemy unit suffers D3 mortal wounds.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Take to the Skies",
+                "id": "42d8-f317-70d1-b03f",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 18,
+                "type": "upgrade",
+                "constraints": [{"id": "cb7e-2d42-1bb1-dc95", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditions": [
+                      {
+                        "childId": "dda2-bb0a-215e-ad9c",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "scope": "ancestor",
+                        "shared": true,
+                        "type": "notInstanceOf",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Take to the Skies",
+                    "id": "8c71-9a8b-779a-e96a",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "Once per battle, at the end of your opponent's Fight phase, you can remove this unit from the battlefield and place it into Strategic Reserves.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Hunting Beasts",
+                "id": "717c-b036-544a-86d1",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 19,
+                "type": "upgrade",
+                "constraints": [{"id": "6819-4129-aed0-b43e", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditions": [
+                      {
+                        "childId": "4c3e-9310-a516-3590",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "scope": "parent",
+                        "shared": true,
+                        "type": "notInstanceOf",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Hunting Beasts",
+                    "id": "396b-a07c-c99f-f3a7",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [{"name": "Description", "$text": "You can re-roll Advance and Charge rolls made for this unit.", "typeId": "9b8f-694b-e5e-b573"}]
+                  }
+                ]
+              },
+              {
+                "name": "Pouncing Predators",
+                "id": "cba3-861a-64bc-581e",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 20,
+                "type": "upgrade",
+                "constraints": [{"id": "067d-ece7-cd0a-879c", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "infoLinks": [{"name": "Fights First", "id": "3873-9c4d-ce42-8f21", "hidden": false, "targetId": "24-c886-e8ba-5a89", "type": "rule"}],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditions": [
+                      {
+                        "childId": "4c3e-9310-a516-3590",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "scope": "parent",
+                        "shared": true,
+                        "type": "notInstanceOf",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Pouncing Predators",
+                    "id": "486c-3e53-0ea3-c4d2",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "You can target this unit with the Heroic Intervention Stratagem for 0CP, and each time you do so, until the end of the turn, add +1 to any charge roll made for that unit.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Enhanced Endurance",
+                "id": "953a-4d1c-5818-e448",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 21,
+                "type": "upgrade",
+                "constraints": [{"id": "2119-a2ed-f794-9fee", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifierGroups": [
+                  {
+                    "type": "and",
+                    "modifiers": [
+                      {
+                        "affects": "self.entries.group.recursive.profiles.Unit",
+                        "field": "annotation",
+                        "join": ", ",
+                        "scope": "root-entry",
+                        "skipIfPresent": "Enhanced Endurance",
+                        "type": "append",
+                        "value": "Enhanced Endurance"
+                      },
+                      {"affects": "self.entries.group.recursive.profiles.Unit", "field": "d29d-cf75-fc2d-34a4", "join": ", ", "scope": "root-entry", "type": "increment", "value": 1}
+                    ]
+                  }
+                ],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditions": [
+                      {
+                        "childId": "4c3e-9310-a516-3590",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "scope": "parent",
+                        "shared": true,
+                        "type": "notInstanceOf",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Enhanced Endurance",
+                    "id": "708c-7a6a-0e23-b6c2",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [{"name": "Description", "$text": "Add 1 to the Toughness characteristic of models in this unit.", "typeId": "9b8f-694b-e5e-b573"}]
+                  }
+                ]
+              },
+              {
+                "name": "Drop Zone Veterans",
+                "id": "67f6-dd18-5ee8-088e",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 22,
+                "type": "upgrade",
+                "constraints": [{"id": "51cb-cf49-8b40-6df0", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifiers": [
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Drop Zone Veterans",
+                    "id": "ccb5-c9d2-6b1e-c5f6",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "Each time this unit is set up on the battlefield using the Deep Strike ability, until the end of the turn, each time a model in this unit makes an attack, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.\n",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Stealthy Arrival",
+                "id": "5368-7c26-ab7c-de51",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 23,
+                "type": "upgrade",
+                "constraints": [{"id": "faa7-94bd-9800-02c0", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifiers": [
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Stealthy Arrival",
+                    "id": "ac29-2a30-873d-6732",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "Each time this unit is set up on the battlefield using the Deep Strike ability, until the end of your next turn, this unit has the Stealth ability and enemy units cannot use the Fire Overwatch Stratagem to shoot at this unit.\n",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Monstrous Momentum",
+                "id": "57b3-73d8-a1b7-b431",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "6565-8d0e-33e2-021c", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifierGroups": [
+                  {
+                    "type": "and",
+                    "modifiers": [
+                      {
+                        "affects": "self.entries.group.recursive.profiles.Unit",
+                        "field": "annotation",
+                        "join": ", ",
+                        "scope": "root-entry",
+                        "skipIfPresent": "Monstrous Momentum",
+                        "type": "append",
+                        "value": "Monstrous Momentum"
+                      },
+                      {"affects": "self.entries.group.recursive.profiles.Unit", "field": "750a-a2ec-90d3-21fe", "join": ", ", "scope": "root-entry", "type": "increment", "value": 2}
+                    ]
+                  }
+                ],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "9693-cf84-fe69-37a9",
+                            "field": "selections",
+                            "includeChildForces": false,
+                            "includeChildSelections": false,
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "notInstanceOf",
+                            "value": 1
+                          },
+                          {
+                            "childId": "dbd4-63-af05-998",
+                            "field": "selections",
+                            "includeChildForces": false,
+                            "includeChildSelections": false,
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "notInstanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Monstrous Momentum",
+                    "id": "74c7-94c3-9288-f992",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [{"name": "Description", "$text": "Add 2\" to the Move characteristic of models in this unit.", "typeId": "9b8f-694b-e5e-b573"}]
+                  }
+                ]
+              },
+              {
+                "name": "Behemoth",
+                "id": "6023-4023-e161-52b9",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "6d14-1470-4f09-ac18", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifierGroups": [
+                  {
+                    "type": "and",
+                    "modifiers": [
+                      {
+                        "affects": "self.entries.group.recursive.profiles.Unit",
+                        "field": "annotation",
+                        "join": ", ",
+                        "scope": "root-entry",
+                        "skipIfPresent": "Behemoth",
+                        "type": "append",
+                        "value": "Behemoth"
+                      },
+                      {"affects": "self.entries.group.recursive.profiles.Unit", "field": "750a-a2ec-90d3-21fe", "join": ", ", "scope": "root-entry", "type": "increment", "value": 2}
+                    ]
+                  }
+                ],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "9693-cf84-fe69-37a9",
+                            "field": "selections",
+                            "includeChildForces": false,
+                            "includeChildSelections": false,
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "notInstanceOf",
+                            "value": 1
+                          },
+                          {
+                            "childId": "dbd4-63-af05-998",
+                            "field": "selections",
+                            "includeChildForces": false,
+                            "includeChildSelections": false,
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "notInstanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Behemoth",
+                    "id": "1674-e73d-9d4e-b67f",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [{"name": "Description", "$text": "Add 2 to the Wounds characteristic of models in this unit.", "typeId": "9b8f-694b-e5e-b573"}]
+                  }
+                ]
+              },
+              {
+                "name": "Aerial Retainers",
+                "id": "57c5-461e-09f4-3210",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 4,
+                "type": "upgrade",
+                "constraints": [{"id": "0896-8cc7-9852-0be2", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifierGroups": [
+                  {
+                    "type": "and",
+                    "modifiers": [
+                      {
+                        "affects": "self.entries.group.recursive.profiles.Unit",
+                        "field": "annotation",
+                        "join": ", ",
+                        "scope": "root-entry",
+                        "skipIfPresent": "Aerial Retainers",
+                        "type": "append",
+                        "value": "Aerial Retainers"
+                      },
+                      {"affects": "self.entries.group.recursive.profiles.Unit", "field": "750a-a2ec-90d3-21fe", "join": ", ", "scope": "root-entry", "type": "increment", "value": 2}
+                    ]
+                  }
+                ],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "9693-cf84-fe69-37a9",
+                            "field": "selections",
+                            "includeChildForces": false,
+                            "includeChildSelections": false,
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "notInstanceOf",
+                            "value": 1
+                          },
+                          {
+                            "childId": "dbd4-63-af05-998",
+                            "field": "selections",
+                            "includeChildForces": false,
+                            "includeChildSelections": false,
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "notInstanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Aerial Retainers",
+                    "id": "2690-60bb-f592-2cd0",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "In the Declare Battle Formations step, you can spend 1 Requisition Point; if you do, then until the end of the battle, this unit has the Deep Strike ability.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Titan Slayer",
+                "id": "7c99-651e-5300-aa8c",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 5,
+                "type": "upgrade",
+                "constraints": [{"id": "5c0f-ea2a-4274-350c", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifierGroups": [
+                  {
+                    "type": "and",
+                    "modifiers": [
+                      {
+                        "affects": "self.entries.group.recursive.profiles.Unit",
+                        "field": "annotation",
+                        "join": ", ",
+                        "scope": "root-entry",
+                        "skipIfPresent": "Titan Slayer",
+                        "type": "append",
+                        "value": "Titan Slayer"
+                      },
+                      {"affects": "self.entries.group.recursive.profiles.Unit", "field": "750a-a2ec-90d3-21fe", "join": ", ", "scope": "root-entry", "type": "increment", "value": 2}
+                    ]
+                  }
+                ],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "9693-cf84-fe69-37a9",
+                            "field": "selections",
+                            "includeChildForces": false,
+                            "includeChildSelections": false,
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "notInstanceOf",
+                            "value": 1
+                          },
+                          {
+                            "childId": "dbd4-63-af05-998",
+                            "field": "selections",
+                            "includeChildForces": false,
+                            "includeChildSelections": false,
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "notInstanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Titan Slayer",
+                    "id": "6870-9d27-ff90-203a",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "Each time a model in this unit makes an attack that targets a MONSTER or VEHICLE unit, re-roll a Hit roll of 1. If that attack targets a TITANIC unit, you can re-roll the Hit roll instead.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Ace Tactics",
+                "id": "fe6a-08cf-8de4-1d60",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 6,
+                "type": "upgrade",
+                "constraints": [{"id": "af9a-11a3-2e23-3f6e", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifierGroups": [
+                  {
+                    "type": "and",
+                    "modifiers": [
+                      {
+                        "affects": "self.entries.group.recursive.profiles.Unit",
+                        "field": "annotation",
+                        "join": ", ",
+                        "scope": "root-entry",
+                        "skipIfPresent": "Ace Tactics",
+                        "type": "append",
+                        "value": "Ace Tactics"
+                      },
+                      {"affects": "self.entries.group.recursive.profiles.Unit", "field": "750a-a2ec-90d3-21fe", "join": ", ", "scope": "root-entry", "type": "increment", "value": 2}
+                    ]
+                  }
+                ],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "9693-cf84-fe69-37a9",
+                            "field": "selections",
+                            "includeChildForces": false,
+                            "includeChildSelections": false,
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "notInstanceOf",
+                            "value": 1
+                          },
+                          {
+                            "childId": "dbd4-63-af05-998",
+                            "field": "selections",
+                            "includeChildForces": false,
+                            "includeChildSelections": false,
+                            "scope": "ancestor",
+                            "shared": true,
+                            "type": "notInstanceOf",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Ace Tactics",
+                    "id": "c36a-42dc-7845-5300",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "Once per battle, in your shooting phase after this unit has shot, it may perform a normal move. This unit may not perform a charge move this turn.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Soul Infused",
+                "id": "e526-ad72-2d57-a067",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 25,
+                "type": "upgrade",
+                "constraints": [{"id": "f3ea-b9f7-96f2-e327", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifierGroups": [
+                  {
+                    "type": "and",
+                    "modifiers": [
+                      {
+                        "affects": "self.entries.group.recursive.profiles.Unit",
+                        "field": "annotation",
+                        "join": ", ",
+                        "scope": "root-entry",
+                        "skipIfPresent": "Soul Infused",
+                        "type": "append",
+                        "value": "Soul Infused"
+                      },
+                      {
+                        "affects": "self.entries.group.recursive.profiles.Unit",
+                        "field": "e703-ecb6-5ce7-aec1",
+                        "join": ", ",
+                        "position": "",
+                        "scope": "root-entry",
+                        "type": "increment",
+                        "value": 3
+                      },
+                      {"affects": "self.entries.group.recursive.profiles.Unit", "field": "d29d-cf75-fc2d-34a4", "join": ", ", "scope": "root-entry", "type": "increment", "value": 3},
+                      {"affects": "self.entries.group.recursive.profiles.Unit", "field": "750a-a2ec-90d3-21fe", "join": ", ", "scope": "root-entry", "type": "increment", "value": 3},
+                      {"affects": "self.entries.group.recursive.profiles.Unit", "field": "58d2-b879-49c7-43bc", "join": ", ", "scope": "root-entry", "type": "increment", "value": -3},
+                      {"affects": "self.entries.group.recursive.profiles.Unit", "field": "55a7-5b54-c60d-11dc", "join": ", ", "scope": "root-entry", "type": "set", "value": "4+"}
+                    ]
+                  }
+                ],
+                "modifiers": [
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Soul Infused",
+                    "id": "1c9c-0d96-9925-2e20",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "Increase this model's Movement, Toughness, Wounds, and Leadership characteristics by 3.\n\nThis model gains the DAEMON and CHAOS keywords.\n\nThis model has a 4+ invulnerable save.\n\n\nIf this character's model would be required to take an Out of Action test, the player does not choose an outcome, instead, this model is immediately permanently replaced by a CHAOS SPAWN unit with 1 model in its unit (this replaces any abilities and keywords, and removes and experience and enhancements), in that player's order of battle with the addition that the CHAOS SPAWN unit gains any Faction Keyword which the replaced character model held.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Converted",
+                "id": "2567-34bb-e223-82cc",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 26,
+                "type": "upgrade",
+                "constraints": [{"id": "d089-1d20-86a2-87e3", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                  {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                ],
+                "modifiers": [
+                  {
+                    "field": "b03b-c239-15a5-da55",
+                    "type": "set",
+                    "value": 2,
+                    "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Converted",
+                    "id": "45f4-b175-f11e-dc95",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "When this Battle Trait is assigned, choose an Army Keyword, this unit gains that Army Keyword but cannot receive any further XP, or Battle Honours for any reason (though it retains any that it has received prior to receiving this Battle Trait.\n",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -15212,6 +16907,1529 @@
                 ]
               }
             ]
+          },
+          {
+            "name": "Punch-Jokaero Crusade Relics",
+            "id": "e4c3-a518-a6ae-4e0f",
+            "collapsible": true,
+            "comment": "Crusade content",
+            "hidden": false,
+            "modifiers": [
+              {
+                "field": "hidden",
+                "type": "set",
+                "value": true,
+                "conditions": [
+                  {
+                    "childId": "d570-e403-5690-ab60",
+                    "childName": "Show Punch-Jokaero content",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "roster",
+                    "shared": true,
+                    "type": "lessThan",
+                    "value": 1
+                  }
+                ]
+              }
+            ],
+            "selectionEntryGroups": [
+              {
+                "name": "Antiquity Relics",
+                "id": "daae-f58f-5151-9da3",
+                "hidden": false,
+                "sortIndex": 2,
+                "selectionEntries": [
+                  {
+                    "name": "Sigil of Psychic Amplification",
+                    "id": "c41f-2b89-8bd4-6b67",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [
+                      {
+                        "id": "9d05-0544-bbf2-2800",
+                        "field": "selections",
+                        "includeChildForces": true,
+                        "includeChildSelections": true,
+                        "scope": "roster",
+                        "shared": true,
+                        "type": "max",
+                        "value": 1
+                      }
+                    ],
+                    "costs": [
+                      {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                      {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 2},
+                      {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                      {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                      {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                    ],
+                    "modifierGroups": [
+                      {
+                        "type": "and",
+                        "modifiers": [
+                          {
+                            "affects": "self.entries.recursive.4546-4a0c-b3be-e84c.profiles.Ranged Weapons",
+                            "field": "annotation",
+                            "join": ", ",
+                            "scope": "model-or-unit",
+                            "skipIfPresent": "Sigil of Psychic Amplification",
+                            "type": "append",
+                            "value": "Sigil of Psychic Amplification"
+                          },
+                          {
+                            "affects": "self.entries.recursive.4546-4a0c-b3be-e84c.profiles.Ranged Weapons",
+                            "field": "9896-9419-16a1-92fc",
+                            "join": ", ",
+                            "scope": "model-or-unit",
+                            "type": "increment",
+                            "value": 6
+                          }
+                        ]
+                      }
+                    ],
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": true,
+                        "conditionGroups": [
+                          {
+                            "type": "or",
+                            "conditionGroups": [
+                              {
+                                "type": "and",
+                                "conditions": [
+                                  {
+                                    "childId": "c41f-2b89-8bd4-6b67",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "roster",
+                                    "shared": true,
+                                    "type": "atLeast",
+                                    "value": 1
+                                  },
+                                  {
+                                    "childId": "c41f-2b89-8bd4-6b67",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "parent",
+                                    "shared": true,
+                                    "type": "lessThan",
+                                    "value": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "conditions": [
+                              {"childId": "any", "field": "a623-fe74-1d33-cddf", "includeChildSelections": true, "scope": "root-entry", "shared": true, "type": "lessThan", "value": 31},
+                              {"childId": "13bf-2bee-3ae0-b414", "field": "selections", "scope": "ancestor", "shared": true, "type": "notInstanceOf", "value": 1}
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "field": "b03b-c239-15a5-da55",
+                        "type": "set",
+                        "value": 2,
+                        "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      }
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Sigil of Psychic Amplification",
+                        "id": "972f-c7ad-32f2-382c",
+                        "hidden": false,
+                        "typeId": "9cc3-6d83-4dd3-9b64",
+                        "typeName": "Abilities",
+                        "characteristics": [
+                          {
+                            "name": "Description",
+                            "$text": "**^^Psyker^^** model only. Add 6\" to the Range characteristic of the bearer's ranged **[PSYCHIC]** weapons. If the bearer has Psychic ability that instructs you to select one or more units within a specified range, you can increase the range of that ability by 6\". If the bearer has a Psychic Aura ability, increase the range of that ability by an additional 3\".",
+                            "typeId": "9b8f-694b-e5e-b573"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Jokaero Crafted Explosives",
+                    "id": "e5aa-9c43-1b8b-e362",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [
+                      {
+                        "id": "3fa2-6429-256c-3365",
+                        "field": "selections",
+                        "includeChildForces": true,
+                        "includeChildSelections": true,
+                        "scope": "roster",
+                        "shared": true,
+                        "type": "max",
+                        "value": 1
+                      }
+                    ],
+                    "costs": [
+                      {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                      {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 2},
+                      {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                      {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                      {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                    ],
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": true,
+                        "conditionGroups": [
+                          {
+                            "type": "or",
+                            "conditionGroups": [
+                              {
+                                "type": "and",
+                                "conditions": [
+                                  {
+                                    "childId": "e5aa-9c43-1b8b-e362",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "roster",
+                                    "shared": true,
+                                    "type": "atLeast",
+                                    "value": 1
+                                  },
+                                  {
+                                    "childId": "e5aa-9c43-1b8b-e362",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "parent",
+                                    "shared": true,
+                                    "type": "lessThan",
+                                    "value": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "conditions": [{"childId": "any", "field": "a623-fe74-1d33-cddf", "includeChildSelections": true, "scope": "root-entry", "shared": true, "type": "lessThan", "value": 31}]
+                          }
+                        ]
+                      },
+                      {
+                        "field": "b03b-c239-15a5-da55",
+                        "type": "set",
+                        "value": 2,
+                        "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      }
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Jokaero Crafted Explosives",
+                        "id": "0fbb-61b1-f587-e047",
+                        "hidden": false,
+                        "typeId": "9cc3-6d83-4dd3-9b64",
+                        "typeName": "Abilities",
+                        "characteristics": [
+                          {
+                            "name": "Description",
+                            "$text": "This model gains the GRENADES keyword.\n\nOnce per battle, when this model's unit uses the EXPLOSIVE stratagem, after it declares a target, it can use this relic.\n\nIf it does so, roll one D6 and apply the corresponding effect when resolving the stratagem's effect:\n\n1 - The bearer's model becomes the target of the stratagem (wounds are applied as though they have the precision keyword and the bearer must receive any mortal wounds before another model) and the player rolls again on this table (re-rolling any further results of 1).\n\n2 - roll 6 D6, each result of 3+ causes one mortal wound.\n\n\n3-5 - roll 6 D6, each result of 3-5 causes 1 mortal wound, and each result of 6 causes 2 mortal wounds.\n\n\n6 - the target unit and every other unit within 3 inches of the target unit suffers D6 mortal wounds.",
+                            "typeId": "9b8f-694b-e5e-b573"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Maelstrom Clarion",
+                    "id": "fcf5-9b53-cc2e-2f04",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [
+                      {
+                        "id": "1feb-a3d1-9e2f-8695",
+                        "field": "selections",
+                        "includeChildForces": true,
+                        "includeChildSelections": true,
+                        "scope": "roster",
+                        "shared": true,
+                        "type": "max",
+                        "value": 1
+                      }
+                    ],
+                    "costs": [
+                      {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                      {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 2},
+                      {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                      {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                      {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                    ],
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": true,
+                        "conditionGroups": [
+                          {
+                            "type": "or",
+                            "conditionGroups": [
+                              {
+                                "type": "and",
+                                "conditions": [
+                                  {
+                                    "childId": "fcf5-9b53-cc2e-2f04",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "roster",
+                                    "shared": true,
+                                    "type": "atLeast",
+                                    "value": 1
+                                  },
+                                  {
+                                    "childId": "fcf5-9b53-cc2e-2f04",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "parent",
+                                    "shared": true,
+                                    "type": "lessThan",
+                                    "value": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "conditions": [{"childId": "any", "field": "a623-fe74-1d33-cddf", "includeChildSelections": true, "scope": "root-entry", "shared": true, "type": "lessThan", "value": 31}]
+                          }
+                        ]
+                      },
+                      {
+                        "field": "b03b-c239-15a5-da55",
+                        "type": "set",
+                        "value": 2,
+                        "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      }
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Maelstrom Clarion",
+                        "id": "52fd-b211-0d38-3445",
+                        "hidden": false,
+                        "typeId": "9cc3-6d83-4dd3-9b64",
+                        "typeName": "Abilities",
+                        "characteristics": [
+                          {
+                            "name": "Description",
+                            "$text": "Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12\" of the bearer.",
+                            "typeId": "9b8f-694b-e5e-b573"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Displacer Field",
+                    "id": "0706-9431-08c9-fccb",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [
+                      {
+                        "id": "84e8-4fab-3439-c541",
+                        "field": "selections",
+                        "includeChildForces": true,
+                        "includeChildSelections": true,
+                        "scope": "roster",
+                        "shared": true,
+                        "type": "max",
+                        "value": 1
+                      }
+                    ],
+                    "costs": [
+                      {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                      {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 2},
+                      {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                      {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                      {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                    ],
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": true,
+                        "conditionGroups": [
+                          {
+                            "type": "or",
+                            "conditionGroups": [
+                              {
+                                "type": "and",
+                                "conditions": [
+                                  {
+                                    "childId": "0706-9431-08c9-fccb",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "roster",
+                                    "shared": true,
+                                    "type": "atLeast",
+                                    "value": 1
+                                  },
+                                  {
+                                    "childId": "0706-9431-08c9-fccb",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "parent",
+                                    "shared": true,
+                                    "type": "lessThan",
+                                    "value": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "conditions": [{"childId": "any", "field": "a623-fe74-1d33-cddf", "includeChildSelections": true, "scope": "root-entry", "shared": true, "type": "lessThan", "value": 31}]
+                          }
+                        ]
+                      },
+                      {
+                        "field": "b03b-c239-15a5-da55",
+                        "type": "set",
+                        "value": 2,
+                        "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      }
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Displacer Field",
+                        "id": "ec2c-dbb0-904d-1bab",
+                        "hidden": false,
+                        "typeId": "9cc3-6d83-4dd3-9b64",
+                        "typeName": "Abilities",
+                        "characteristics": [
+                          {
+                            "name": "Description",
+                            "$text": "Once per battle, at the end of your opponent's Shooting phase, if the bearer's unit is not within Engagement Range of one or more enemy units, and if it was targeted by one or more attacks during that phase, you can remove the bearer's unit from the battlefield and place it into Strategic Reserves. If you do, until the end of your next movement phase, models in that unit have the Deep Strike ability until the end of that phase.",
+                            "typeId": "9b8f-694b-e5e-b573"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Hammer of the Heavens",
+                    "id": "cd6f-11db-f608-a432",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [
+                      {
+                        "id": "bab5-1a6b-a0ec-5d0b",
+                        "field": "selections",
+                        "includeChildForces": true,
+                        "includeChildSelections": true,
+                        "scope": "roster",
+                        "shared": true,
+                        "type": "max",
+                        "value": 1
+                      }
+                    ],
+                    "costs": [
+                      {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                      {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 2},
+                      {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                      {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                      {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                    ],
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": true,
+                        "conditionGroups": [
+                          {
+                            "type": "or",
+                            "conditionGroups": [
+                              {
+                                "type": "and",
+                                "conditions": [
+                                  {
+                                    "childId": "cd6f-11db-f608-a432",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "roster",
+                                    "shared": true,
+                                    "type": "atLeast",
+                                    "value": 1
+                                  },
+                                  {
+                                    "childId": "cd6f-11db-f608-a432",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "parent",
+                                    "shared": true,
+                                    "type": "lessThan",
+                                    "value": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "conditions": [{"childId": "any", "field": "a623-fe74-1d33-cddf", "includeChildSelections": true, "scope": "root-entry", "shared": true, "type": "lessThan", "value": 31}]
+                          }
+                        ]
+                      },
+                      {
+                        "field": "b03b-c239-15a5-da55",
+                        "type": "set",
+                        "value": 2,
+                        "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      }
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Hammer of the Heavens",
+                        "id": "dec7-56df-45c1-fb53",
+                        "hidden": false,
+                        "typeId": "9cc3-6d83-4dd3-9b64",
+                        "typeName": "Abilities",
+                        "characteristics": [
+                          {
+                            "name": "Description",
+                            "$text": "Once per battle, in your Command phase, if the bearer is on the battlefield you can use this ability. Select one point on the battlefield and place a marker at that location. At the start of your next Command phase, roll six D6 for each enemy unit within 6\" of the centre of that marker, adding 2 to the result when rolling for a unit within 3\" of the centre of that marker: for each 4+ that unit suffers 1 mortal wound. The marker is then removed.",
+                            "typeId": "9b8f-694b-e5e-b573"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Legendary Relics",
+                "id": "105d-4684-6412-892b",
+                "hidden": false,
+                "sortIndex": 3,
+                "selectionEntries": [
+                  {
+                    "name": "Fate-forged Weapon",
+                    "id": "5277-d007-491f-32e6",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [
+                      {
+                        "id": "38e6-1af7-e3e5-a3ff",
+                        "field": "selections",
+                        "includeChildForces": true,
+                        "includeChildSelections": true,
+                        "scope": "roster",
+                        "shared": true,
+                        "type": "max",
+                        "value": 1
+                      }
+                    ],
+                    "costs": [
+                      {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                      {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 3},
+                      {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                      {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                      {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                    ],
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": true,
+                        "conditionGroups": [
+                          {
+                            "type": "or",
+                            "conditionGroups": [
+                              {
+                                "type": "and",
+                                "conditions": [
+                                  {
+                                    "childId": "5277-d007-491f-32e6",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "roster",
+                                    "shared": true,
+                                    "type": "atLeast",
+                                    "value": 1
+                                  },
+                                  {
+                                    "childId": "5277-d007-491f-32e6",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "parent",
+                                    "shared": true,
+                                    "type": "lessThan",
+                                    "value": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "conditions": [{"childId": "any", "field": "a623-fe74-1d33-cddf", "includeChildSelections": true, "scope": "root-entry", "shared": true, "type": "lessThan", "value": 51}]
+                          }
+                        ]
+                      },
+                      {
+                        "field": "b03b-c239-15a5-da55",
+                        "type": "set",
+                        "value": 2,
+                        "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      },
+                      {
+                        "field": "error",
+                        "type": "add",
+                        "value": "Must upgrade a weapon to a Crusade Relic",
+                        "conditions": [
+                          {"childId": "f36f-9bf8-0744-3752", "field": "selections", "includeChildSelections": true, "scope": "root-entry", "shared": true, "type": "lessThan", "value": 1},
+                          {"childId": "5277-d007-491f-32e6", "field": "selections", "includeChildSelections": true, "scope": "root-entry", "shared": true, "type": "atLeast", "value": 1}
+                        ]
+                      }
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Fate-forged Weapon",
+                        "id": "9701-9d52-bcbb-1d80",
+                        "hidden": false,
+                        "typeId": "9cc3-6d83-4dd3-9b64",
+                        "typeName": "Abilities",
+                        "characteristics": [
+                          {
+                            "name": "Description",
+                            "$text": "Select one melee weapon equipped by the bearer (excluding a weapon that has been replaced by an Enhancement or Crusade Relic, or upgraded with any Battle Traits). That weapon is now a Crusade Relic and:\n- Each time an attack is made with it, you can re-roll the Wound roll.\n- Once per battle, at the start of the Fight phase, the bearer can unleash the power stored in that weapon. When they do, until the end of the turn, that weapon has the **[DEVASTATING WOUNDS]** ability and its Strength and Attacks characteristics are increased by a number equal to the current battle round number.",
+                            "typeId": "9b8f-694b-e5e-b573"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Gloaming Mantle",
+                    "id": "914b-ef78-c4bb-8cb4",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [
+                      {
+                        "id": "c335-812e-ac91-a184",
+                        "field": "selections",
+                        "includeChildForces": true,
+                        "includeChildSelections": true,
+                        "scope": "roster",
+                        "shared": true,
+                        "type": "max",
+                        "value": 1
+                      }
+                    ],
+                    "costs": [
+                      {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                      {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 3},
+                      {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                      {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                      {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                    ],
+                    "infoLinks": [{"name": "Lone Operative", "id": "f617-7b80-efd2-9be6", "hidden": false, "targetId": "a8a0-8fe7-898-e0f3", "type": "rule"}],
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": true,
+                        "conditionGroups": [
+                          {
+                            "type": "or",
+                            "conditionGroups": [
+                              {
+                                "type": "and",
+                                "conditions": [
+                                  {
+                                    "childId": "914b-ef78-c4bb-8cb4",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "roster",
+                                    "shared": true,
+                                    "type": "atLeast",
+                                    "value": 1
+                                  },
+                                  {
+                                    "childId": "914b-ef78-c4bb-8cb4",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "parent",
+                                    "shared": true,
+                                    "type": "lessThan",
+                                    "value": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "conditions": [{"childId": "any", "field": "a623-fe74-1d33-cddf", "includeChildSelections": true, "scope": "root-entry", "shared": true, "type": "lessThan", "value": 51}]
+                          }
+                        ]
+                      },
+                      {
+                        "field": "b03b-c239-15a5-da55",
+                        "type": "set",
+                        "value": 2,
+                        "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      },
+                      {"affects": "group", "field": "add-info", "scope": "root-entry", "type": "add", "value": "bec5-4288-34a6-ccfa"}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Gloaming Mantle",
+                        "id": "9d28-6eef-5e34-e5cc",
+                        "hidden": false,
+                        "typeId": "9cc3-6d83-4dd3-9b64",
+                        "typeName": "Abilities",
+                        "characteristics": [
+                          {
+                            "name": "Description",
+                            "$text": "The bearer has the Lone Operative and Stealth abilities.\n\nWhile the bearer is leading a unit, models in that unit have the Stealth ability and that unit can only be selected as the target of a ranged attack if the attacking model is within 18\"; in addition, ranged attacks by this unit do not prevent the unit from being hidden.",
+                            "typeId": "9b8f-694b-e5e-b573"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Lyreth's Mirror",
+                    "id": "3356-28b0-052b-0f09",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [
+                      {
+                        "id": "e2de-8f81-fdce-493f",
+                        "field": "selections",
+                        "includeChildForces": true,
+                        "includeChildSelections": true,
+                        "scope": "roster",
+                        "shared": true,
+                        "type": "max",
+                        "value": 1
+                      }
+                    ],
+                    "costs": [
+                      {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                      {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 3},
+                      {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                      {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                      {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                    ],
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": true,
+                        "conditionGroups": [
+                          {
+                            "type": "or",
+                            "conditionGroups": [
+                              {
+                                "type": "and",
+                                "conditions": [
+                                  {
+                                    "childId": "3356-28b0-052b-0f09",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "roster",
+                                    "shared": true,
+                                    "type": "atLeast",
+                                    "value": 1
+                                  },
+                                  {
+                                    "childId": "3356-28b0-052b-0f09",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "parent",
+                                    "shared": true,
+                                    "type": "lessThan",
+                                    "value": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "conditions": [{"childId": "any", "field": "a623-fe74-1d33-cddf", "includeChildSelections": true, "scope": "root-entry", "shared": true, "type": "lessThan", "value": 51}]
+                          }
+                        ]
+                      },
+                      {
+                        "field": "b03b-c239-15a5-da55",
+                        "type": "set",
+                        "value": 2,
+                        "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      }
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Azariah's Mirror",
+                        "id": "8002-c668-10d8-7532",
+                        "hidden": false,
+                        "typeId": "9cc3-6d83-4dd3-9b64",
+                        "typeName": "Abilities",
+                        "characteristics": [
+                          {
+                            "name": "Description",
+                            "$text": "At the end of your opponent's Movement phase, you can select one enemy unit that was set up one the battlefield within 12\" of the bearer's unit during this phase; the bearer's unit can then either:\n- Shoot, but when resolving those attacks the bearer's unit can only target that enemy unit (and only if it is an eligible target).\n- Declare a charge against that unit.",
+                            "typeId": "9b8f-694b-e5e-b573"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Guiding-Spirit",
+                    "id": "efb2-1626-fb94-2867",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [
+                      {
+                        "id": "ff71-268d-b24a-37af",
+                        "field": "selections",
+                        "includeChildForces": true,
+                        "includeChildSelections": true,
+                        "scope": "roster",
+                        "shared": true,
+                        "type": "max",
+                        "value": 1
+                      }
+                    ],
+                    "costs": [
+                      {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                      {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 3},
+                      {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                      {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                      {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                    ],
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": true,
+                        "conditionGroups": [
+                          {
+                            "type": "or",
+                            "conditionGroups": [
+                              {
+                                "type": "and",
+                                "conditions": [
+                                  {
+                                    "childId": "efb2-1626-fb94-2867",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "roster",
+                                    "shared": true,
+                                    "type": "atLeast",
+                                    "value": 1
+                                  },
+                                  {
+                                    "childId": "efb2-1626-fb94-2867",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "parent",
+                                    "shared": true,
+                                    "type": "lessThan",
+                                    "value": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "conditions": [{"childId": "any", "field": "a623-fe74-1d33-cddf", "includeChildSelections": true, "scope": "root-entry", "shared": true, "type": "lessThan", "value": 51}]
+                          }
+                        ]
+                      },
+                      {
+                        "field": "b03b-c239-15a5-da55",
+                        "type": "set",
+                        "value": 2,
+                        "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      },
+                      {
+                        "field": "error",
+                        "type": "add",
+                        "value": "Must upgrade a weapon to a Crusade Relic",
+                        "conditions": [
+                          {
+                            "childId": "0a84-feb4-7c96-8ad3",
+                            "childName": "Guiding-Spirit upgrade",
+                            "field": "selections",
+                            "includeChildSelections": true,
+                            "scope": "root-entry",
+                            "shared": true,
+                            "type": "lessThan",
+                            "value": 1
+                          },
+                          {"childId": "efb2-1626-fb94-2867", "field": "selections", "includeChildSelections": true, "scope": "root-entry", "shared": true, "type": "atLeast", "value": 1}
+                        ]
+                      }
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Guiding-Spirit",
+                        "id": "56f2-73bc-b739-df11",
+                        "hidden": false,
+                        "typeId": "9cc3-6d83-4dd3-9b64",
+                        "typeName": "Abilities",
+                        "characteristics": [
+                          {
+                            "name": "Description",
+                            "$text": "Select one melee weapon equipped by the bearer (excluding a weapon that has been replaced by an Enhancement or Crusade Relic, or upgraded with any Battle Traits). That weapon is now a Crusade Relic and:\n\nThat weapon gains the **[EXTRA ATTACKS]** ability.\nThis model gains the **[DAEMON]** keyword.",
+                            "typeId": "9b8f-694b-e5e-b573"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Jokaero Sigil",
+                    "id": "45f7-7bfa-bc3e-e6cd",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [
+                      {
+                        "id": "27a6-9ff5-9c6c-ba4f",
+                        "field": "selections",
+                        "includeChildForces": true,
+                        "includeChildSelections": true,
+                        "scope": "roster",
+                        "shared": true,
+                        "type": "max",
+                        "value": 1
+                      }
+                    ],
+                    "costs": [
+                      {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                      {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 3},
+                      {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                      {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                      {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                    ],
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": true,
+                        "conditionGroups": [
+                          {
+                            "type": "or",
+                            "conditionGroups": [
+                              {
+                                "type": "and",
+                                "conditions": [
+                                  {
+                                    "childId": "45f7-7bfa-bc3e-e6cd",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "roster",
+                                    "shared": true,
+                                    "type": "atLeast",
+                                    "value": 1
+                                  },
+                                  {
+                                    "childId": "45f7-7bfa-bc3e-e6cd",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "parent",
+                                    "shared": true,
+                                    "type": "lessThan",
+                                    "value": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "conditions": [{"childId": "any", "field": "a623-fe74-1d33-cddf", "includeChildSelections": true, "scope": "root-entry", "shared": true, "type": "lessThan", "value": 51}]
+                          }
+                        ]
+                      },
+                      {
+                        "field": "b03b-c239-15a5-da55",
+                        "type": "set",
+                        "value": 2,
+                        "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      }
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Jokaero Sigil",
+                        "id": "b89a-3d2a-9571-cc21",
+                        "hidden": false,
+                        "typeId": "9cc3-6d83-4dd3-9b64",
+                        "typeName": "Abilities",
+                        "characteristics": [
+                          {
+                            "name": "Description",
+                            "$text": "Non-Pysker infantry model only.\n\nThe bearer has the Feel No Pain 4+ ability against Pyschic Attacks.",
+                            "typeId": "9b8f-694b-e5e-b573"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Jokaero Engine Additives",
+                    "id": "ebf7-b38f-d60f-b0f7",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [
+                      {
+                        "id": "15c3-9cba-4db0-5b47",
+                        "field": "selections",
+                        "includeChildForces": true,
+                        "includeChildSelections": true,
+                        "scope": "roster",
+                        "shared": true,
+                        "type": "max",
+                        "value": 1
+                      }
+                    ],
+                    "costs": [
+                      {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                      {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 3},
+                      {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                      {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                      {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                    ],
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": true,
+                        "conditionGroups": [
+                          {
+                            "type": "or",
+                            "conditionGroups": [
+                              {
+                                "type": "and",
+                                "conditions": [
+                                  {
+                                    "childId": "ebf7-b38f-d60f-b0f7",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "roster",
+                                    "shared": true,
+                                    "type": "atLeast",
+                                    "value": 1
+                                  },
+                                  {
+                                    "childId": "ebf7-b38f-d60f-b0f7",
+                                    "field": "selections",
+                                    "includeChildForces": true,
+                                    "includeChildSelections": true,
+                                    "scope": "parent",
+                                    "shared": true,
+                                    "type": "lessThan",
+                                    "value": 1
+                                  }
+                                ]
+                              }
+                            ],
+                            "conditions": [{"childId": "any", "field": "a623-fe74-1d33-cddf", "includeChildSelections": true, "scope": "root-entry", "shared": true, "type": "lessThan", "value": 51}]
+                          }
+                        ]
+                      },
+                      {
+                        "field": "b03b-c239-15a5-da55",
+                        "type": "set",
+                        "value": 2,
+                        "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      }
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Jokaero Engine Additives",
+                        "id": "4d1c-0aa6-1e65-68af",
+                        "hidden": false,
+                        "typeId": "9cc3-6d83-4dd3-9b64",
+                        "typeName": "Abilities",
+                        "characteristics": [
+                          {
+                            "name": "Description",
+                            "$text": "Vehicle or mounted model only.\n\nModels in the bearer's unit improve their Movement characteristic by +2\", and add +1 to any Advance or Charge rolls. ",
+                            "typeId": "9b8f-694b-e5e-b573"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Artificer Relics",
+                "id": "760b-8a25-1e80-b475",
+                "hidden": false,
+                "sortIndex": 1,
+                "selectionEntries": [
+                  {
+                    "name": "Auto-medicae",
+                    "id": "7585-7ce7-0a58-0a8c",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [
+                      {
+                        "id": "96f0-414e-96fd-0ccf",
+                        "field": "selections",
+                        "includeChildForces": true,
+                        "includeChildSelections": true,
+                        "scope": "roster",
+                        "shared": true,
+                        "type": "max",
+                        "value": 1
+                      }
+                    ],
+                    "costs": [
+                      {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                      {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                      {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                      {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                      {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                    ],
+                    "infoLinks": [{"name": "Feel No Pain 5+", "id": "45ae-b38e-f367-514f", "hidden": false, "targetId": "5e10-6d62-2624-80a8", "type": "rule"}],
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": true,
+                        "conditionGroups": [
+                          {
+                            "type": "and",
+                            "conditions": [
+                              {
+                                "childId": "7585-7ce7-0a58-0a8c",
+                                "field": "selections",
+                                "includeChildForces": true,
+                                "includeChildSelections": true,
+                                "scope": "roster",
+                                "shared": true,
+                                "type": "atLeast",
+                                "value": 1
+                              },
+                              {
+                                "childId": "7585-7ce7-0a58-0a8c",
+                                "field": "selections",
+                                "includeChildForces": true,
+                                "includeChildSelections": true,
+                                "scope": "parent",
+                                "shared": true,
+                                "type": "lessThan",
+                                "value": 1
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "field": "b03b-c239-15a5-da55",
+                        "type": "set",
+                        "value": 2,
+                        "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      }
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Auto-medicae",
+                        "id": "b8ab-71cd-634f-f985",
+                        "hidden": false,
+                        "typeId": "9cc3-6d83-4dd3-9b64",
+                        "typeName": "Abilities",
+                        "characteristics": [
+                          {
+                            "name": "Description",
+                            "$text": "At the beginning of your commend phase, the bearer regains D3+1 wounds up to its maximum wound characteristic.",
+                            "typeId": "9b8f-694b-e5e-b573"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Strategic Laurels",
+                    "id": "928e-58ce-5ded-5b83",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [
+                      {
+                        "id": "fbfa-d68f-7dc1-7013",
+                        "field": "selections",
+                        "includeChildForces": true,
+                        "includeChildSelections": true,
+                        "scope": "roster",
+                        "shared": true,
+                        "type": "max",
+                        "value": 1
+                      }
+                    ],
+                    "costs": [
+                      {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                      {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                      {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                      {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                      {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                    ],
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": true,
+                        "conditionGroups": [
+                          {
+                            "type": "and",
+                            "conditions": [
+                              {
+                                "childId": "928e-58ce-5ded-5b83",
+                                "field": "selections",
+                                "includeChildForces": true,
+                                "includeChildSelections": true,
+                                "scope": "roster",
+                                "shared": true,
+                                "type": "atLeast",
+                                "value": 1
+                              },
+                              {
+                                "childId": "928e-58ce-5ded-5b83",
+                                "field": "selections",
+                                "includeChildForces": true,
+                                "includeChildSelections": true,
+                                "scope": "parent",
+                                "shared": true,
+                                "type": "lessThan",
+                                "value": 1
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "field": "b03b-c239-15a5-da55",
+                        "type": "set",
+                        "value": 2,
+                        "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      }
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Strategic Laurels",
+                        "id": "0d42-f049-9936-e9b7",
+                        "hidden": false,
+                        "typeId": "9cc3-6d83-4dd3-9b64",
+                        "typeName": "Abilities",
+                        "characteristics": [
+                          {
+                            "name": "Description",
+                            "$text": "At the start of your first Command phase, if the bearer is on the battlefield, you gain 1CP. At the end of the battle, if the bearer is on the battlefield, you gain 1 Requisition Point (RP).",
+                            "typeId": "9b8f-694b-e5e-b573"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Conversion Field",
+                    "id": "72b2-af7b-013c-f9f4",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [
+                      {
+                        "id": "b5b3-5b13-0e5a-1f49",
+                        "field": "selections",
+                        "includeChildForces": true,
+                        "includeChildSelections": true,
+                        "scope": "roster",
+                        "shared": true,
+                        "type": "max",
+                        "value": 1
+                      }
+                    ],
+                    "costs": [
+                      {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                      {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                      {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                      {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                      {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                    ],
+                    "modifierGroups": [
+                      {
+                        "type": "and",
+                        "modifiers": [
+                          {
+                            "affects": "self.entries.group.recursive.profiles.Unit",
+                            "field": "annotation",
+                            "join": ", ",
+                            "scope": "root-entry",
+                            "skipIfPresent": "Conversion Field",
+                            "type": "append",
+                            "value": "Conversion Field"
+                          },
+                          {
+                            "affects": "self.entries.group.recursive.profiles.Unit",
+                            "arg": "-",
+                            "field": "55a7-5b54-c60d-11dc",
+                            "join": "",
+                            "scope": "root-entry",
+                            "skipIfPresent": "+",
+                            "type": "replace",
+                            "value": "5+*"
+                          }
+                        ]
+                      }
+                    ],
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": true,
+                        "conditionGroups": [
+                          {
+                            "type": "and",
+                            "conditions": [
+                              {
+                                "childId": "72b2-af7b-013c-f9f4",
+                                "field": "selections",
+                                "includeChildForces": true,
+                                "includeChildSelections": true,
+                                "scope": "roster",
+                                "shared": true,
+                                "type": "atLeast",
+                                "value": 1
+                              },
+                              {
+                                "childId": "72b2-af7b-013c-f9f4",
+                                "field": "selections",
+                                "includeChildForces": true,
+                                "includeChildSelections": true,
+                                "scope": "parent",
+                                "shared": true,
+                                "type": "lessThan",
+                                "value": 1
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "field": "b03b-c239-15a5-da55",
+                        "type": "set",
+                        "value": 2,
+                        "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      }
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Conversion Field",
+                        "id": "1d23-4e51-6317-81e6",
+                        "hidden": false,
+                        "typeId": "9cc3-6d83-4dd3-9b64",
+                        "typeName": "Abilities",
+                        "characteristics": [
+                          {
+                            "name": "Description",
+                            "$text": "Models in the bearer's unit have a 5+ invulnerable save against ranged attacks and each time a ranged attack is allocated to a model in the bearer's unit, on an unmodified saving throw of 6, the attacking unit suffers 1 mortal wound after it has finished making its attacks.",
+                            "typeId": "9b8f-694b-e5e-b573"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Gene-toxin Autofont",
+                    "id": "7d7e-2676-b31b-218c",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [
+                      {
+                        "id": "fdeb-7ac9-f4ee-01f1",
+                        "field": "selections",
+                        "includeChildForces": true,
+                        "includeChildSelections": true,
+                        "scope": "roster",
+                        "shared": true,
+                        "type": "max",
+                        "value": 1
+                      }
+                    ],
+                    "costs": [
+                      {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                      {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                      {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                      {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                      {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                    ],
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": true,
+                        "conditionGroups": [
+                          {
+                            "type": "and",
+                            "conditions": [
+                              {
+                                "childId": "7d7e-2676-b31b-218c",
+                                "field": "selections",
+                                "includeChildForces": true,
+                                "includeChildSelections": true,
+                                "scope": "roster",
+                                "shared": true,
+                                "type": "atLeast",
+                                "value": 1
+                              },
+                              {
+                                "childId": "7d7e-2676-b31b-218c",
+                                "field": "selections",
+                                "includeChildForces": true,
+                                "includeChildSelections": true,
+                                "scope": "parent",
+                                "shared": true,
+                                "type": "lessThan",
+                                "value": 1
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "field": "b03b-c239-15a5-da55",
+                        "type": "set",
+                        "value": 2,
+                        "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      },
+                      {
+                        "field": "error",
+                        "type": "add",
+                        "value": "Must upgrade a weapon to a Crusade Relic",
+                        "conditions": [
+                          {"childId": "59bf-61aa-e8ff-07f3", "field": "selections", "includeChildSelections": true, "scope": "root-entry", "shared": true, "type": "lessThan", "value": 1},
+                          {"childId": "7d7e-2676-b31b-218c", "field": "selections", "includeChildSelections": true, "scope": "root-entry", "shared": true, "type": "atLeast", "value": 1}
+                        ]
+                      }
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Gene-toxin Autofont",
+                        "id": "2210-e530-24a5-1c21",
+                        "hidden": false,
+                        "typeId": "9cc3-6d83-4dd3-9b64",
+                        "typeName": "Abilities",
+                        "characteristics": [
+                          {
+                            "name": "Description",
+                            "$text": "Select one melee weapon equipped by the bearer (excluding a weapon that has been replaced by an Enhancement or Crusade Relic, or upgraded with any Battle Traits). That weapon is now a Crusade Relic and, in your Fight phase, after the bearer has fought, select one enemy unit hit by one or more of those attacks made with this weapon. Until the end of the battle, that enemy unit is poisoned. At the start of each player's Command phase, roll one D6 for each poisoned enemy unit on the battlefield: on a 1, the poison wears off and the unit is no longer poisoned; on a 2-3, that enemy unit suffers 1 mortal wound; on a 4-5, that enemy unit suffers D3 mortal wounds; on a 6 that enemy unit suffers D3+1 mortal wounds.",
+                            "typeId": "9b8f-694b-e5e-b573"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Jokaero Crafted Cogitator",
+                    "id": "1f3b-2015-f2e0-c183",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [
+                      {
+                        "id": "b41c-7a28-6f10-606f",
+                        "field": "selections",
+                        "includeChildForces": true,
+                        "includeChildSelections": true,
+                        "scope": "roster",
+                        "shared": true,
+                        "type": "max",
+                        "value": 1
+                      }
+                    ],
+                    "costs": [
+                      {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                      {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                      {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 1},
+                      {"name": "Diplomatic Power", "typeId": "4d7c-04b6-8a79-837f", "value": 0},
+                      {"name": "Military Power", "typeId": "1cbe-d9c9-86a8-2d41", "value": 0}
+                    ],
+                    "modifiers": [
+                      {
+                        "field": "hidden",
+                        "type": "set",
+                        "value": true,
+                        "conditionGroups": [
+                          {
+                            "type": "and",
+                            "conditions": [
+                              {
+                                "childId": "1f3b-2015-f2e0-c183",
+                                "field": "selections",
+                                "includeChildForces": true,
+                                "includeChildSelections": true,
+                                "scope": "roster",
+                                "shared": true,
+                                "type": "atLeast",
+                                "value": 1
+                              },
+                              {
+                                "childId": "1f3b-2015-f2e0-c183",
+                                "field": "selections",
+                                "includeChildForces": true,
+                                "includeChildSelections": true,
+                                "scope": "parent",
+                                "shared": true,
+                                "type": "lessThan",
+                                "value": 1
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "field": "b03b-c239-15a5-da55",
+                        "type": "set",
+                        "value": 2,
+                        "conditions": [{"childId": "5929-ad51-d006-e008", "field": "selections", "scope": "ancestor", "shared": true, "type": "instanceOf", "value": 1}]
+                      }
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Jokaero Crafted Cogitator",
+                        "id": "18f1-0e65-6d4c-bf3d",
+                        "hidden": false,
+                        "typeId": "9cc3-6d83-4dd3-9b64",
+                        "typeName": "Abilities",
+                        "characteristics": [
+                          {
+                            "name": "Description",
+                            "$text": "The bearer's unit may be targeted with the Command Re-Roll Stratagem once per turn for 0CP even if another unit has been targeted with that stratagem that phase.",
+                            "typeId": "9b8f-694b-e5e-b573"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -17220,6 +20438,212 @@
                 ]
               }
             ]
+          },
+          {
+            "name": "Punch-Jokaero Crusade Abilities",
+            "id": "c000-85e2-00b6-2b48",
+            "defaultSelectionEntryId": "none",
+            "hidden": false,
+            "sortIndex": 4,
+            "constraints": [
+              {"id": "f8b3-7609-36b4-c75a", "field": "selections", "includeChildSelections": true, "scope": "parent", "shared": true, "type": "min", "value": 0},
+              {"id": "e0bc-2cc5-759d-c08c", "field": "selections", "includeChildSelections": true, "scope": "parent", "shared": true, "type": "max", "value": 1}
+            ],
+            "modifiers": [
+              {
+                "field": "hidden",
+                "type": "set",
+                "value": true,
+                "conditions": [
+                  {
+                    "childId": "f510-c405-d460-19bc",
+                    "childName": "Punch-Jokaero Crusade",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "roster",
+                    "shared": true,
+                    "type": "lessThan",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "f8b3-7609-36b4-c75a",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "f510-c405-d460-19bc",
+                    "childName": "Punch-Jokaero Crusade",
+                    "field": "selections",
+                    "includeChildForces": true,
+                    "includeChildSelections": true,
+                    "scope": "roster",
+                    "shared": true,
+                    "type": "atLeast",
+                    "value": 1
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Subtle Champion",
+                "id": "527b-e738-bba9-0a78",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 0},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Crusade: Weapon Modifications", "typeId": "716d-91b7-d55a-1022", "value": 0},
+                  {"name": "Blackstone Fragments", "typeId": "ac6b-ced3-9b5e-9a6e", "value": 0}
+                ],
+                "profiles": [
+                  {
+                    "name": "Subtle Champion",
+                    "id": "e543-82e9-657e-489a",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "If your Crusade army includes an **^^Epic Hero^^** model with this Crusade Ability, at the Determine Attacker and Defender step, you can re-roll your dice when determining who will be the Attacker and who will be the Defender (if a roll is not required due to another rule then this has no effect), and in addition, you may re-roll your dice roll in the Determine First Turn step (if a roll is not required due to another rule then this has no effect).",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Front-line Champion",
+                "id": "4626-cc07-609c-d907",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 0},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Crusade: Weapon Modifications", "typeId": "716d-91b7-d55a-1022", "value": 0},
+                  {"name": "Blackstone Fragments", "typeId": "ac6b-ced3-9b5e-9a6e", "value": 0}
+                ],
+                "profiles": [
+                  {
+                    "name": "Front-line Champion",
+                    "id": "60ae-0a0e-d603-6dd9",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "At the declare Battle-formations step, select one Punch-Jokaero Crusade Battle Trait. Until the end of the Battle, this **^^Epic Hero^^** model and any attached unit it forms, are considered to have this Battle Trait.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Nemesis Champion",
+                "id": "bec1-2b4f-67fa-442f",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 0},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Crusade: Weapon Modifications", "typeId": "716d-91b7-d55a-1022", "value": 0},
+                  {"name": "Blackstone Fragments", "typeId": "ac6b-ced3-9b5e-9a6e", "value": 0}
+                ],
+                "profiles": [
+                  {
+                    "name": "Nemesis Champion",
+                    "id": "2521-52d2-596c-a739",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "During the battle, if one or more enemy **^^Character^^** models are destroyed by an attack made by an **^^Epic Hero^^** model (or a model in a unit it is attached to) with this Crusade Ability from your Crusade army, then at the Update Crusade Cards step, all units in your Crusade army gain 1XP. If one of those destroyed enemy **^^Character^^** models was the enemy **^^Warlord^^**, you also gain 1 one additional XP.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "System Champion",
+                "id": "bc9c-2cb5-e722-cc1b",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 0},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Crusade: Weapon Modifications", "typeId": "716d-91b7-d55a-1022", "value": 0},
+                  {"name": "Blackstone Fragments", "typeId": "ac6b-ced3-9b5e-9a6e", "value": 0}
+                ],
+                "profiles": [
+                  {
+                    "name": "Restorative Champion",
+                    "id": "0282-49c9-18c5-5164",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "If your Crusade army wins a battle in a Crusade Round whilst it contained an **^^Epic Hero^^** model with this Crusade Ability, during the Conquest of Territory Step, that player's faction may re-roll one or both dice when it rolls to attempt to conquer a tile in that Campaign Round.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Strategic Champion",
+                "id": "9773-dcc2-29ad-2b1b",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [
+                  {"name": "pts", "typeId": "51b2-306e-1021-d207", "value": 0},
+                  {"name": "Crusade Points", "typeId": "b03b-c239-15a5-da55", "value": 1},
+                  {"name": "Crusade: Battle Honours", "typeId": "75bb-ded1-c86d-bdf0", "value": 0},
+                  {"name": "Crusade: Experience", "typeId": "a623-fe74-1d33-cddf", "value": 0},
+                  {"name": "Crusade: Weapon Modifications", "typeId": "716d-91b7-d55a-1022", "value": 0},
+                  {"name": "Blackstone Fragments", "typeId": "ac6b-ced3-9b5e-9a6e", "value": 0}
+                ],
+                "profiles": [
+                  {
+                    "name": "Strategic Champion",
+                    "id": "e353-c48e-c380-458f",
+                    "hidden": false,
+                    "typeId": "9cc3-6d83-4dd3-9b64",
+                    "typeName": "Abilities",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "If your Crusade army includes one or more **^^Epic Hero^^** models with this Crusade ability, then at the Select Crusade Blessings step, roll one D6: on 4+ select one of the following:\n- If you are the Underdog, you can select one additional Crusade Blessing.\n- If you are not the Underdog, you can select one Crusade Blessing, instead.",
+                        "typeId": "9b8f-694b-e5e-b573"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -17811,6 +21235,81 @@
                 "value": 1,
                 "conditions": [
                   {"childId": "7499-0c7d-efd2-d306", "field": "selections", "includeChildSelections": true, "scope": "root-entry", "shared": true, "type": "atLeast", "value": 1}
+                ]
+              },
+              {"field": "category", "join": ", ", "scope": "upgrade", "type": "add", "value": "c13c-1717-f8a8-a8df"}
+            ]
+          },
+          {
+            "name": "Guiding-Spirit upgrade",
+            "id": "0a84-feb4-7c96-8ad3",
+            "hidden": false,
+            "import": true,
+            "type": "upgrade",
+            "constraints": [
+              {"id": "f420-dc59-80a8-c157", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 1},
+              {"id": "6f77-22ab-d258-f31e", "field": "selections", "includeChildSelections": true, "scope": "root-entry", "shared": true, "type": "min", "value": 0}
+            ],
+            "modifierGroups": [
+              {
+                "type": "and",
+                "modifiers": [{"affects": "profiles.Melee Weapons", "field": "annotation", "join": ", ", "scope": "upgrade", "type": "append", "value": "Guiding Spirit"}]
+              }
+            ],
+            "modifiers": [
+              {
+                "field": "hidden",
+                "type": "set",
+                "value": true,
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {"childId": "0a84-feb4-7c96-8ad3", "field": "selections", "includeChildSelections": true, "scope": "root-entry", "shared": true, "type": "atLeast", "value": 1},
+                          {"childId": "0a84-feb4-7c96-8ad3", "field": "selections", "includeChildSelections": true, "scope": "upgrade", "shared": true, "type": "lessThan", "value": 1}
+                        ]
+                      },
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {"childId": "c13c-1717-f8a8-a8df", "field": "selections", "includeChildSelections": false, "scope": "upgrade", "shared": true, "type": "instanceOf", "value": 1},
+                          {"childId": "0a84-feb4-7c96-8ad3", "field": "selections", "includeChildSelections": true, "scope": "upgrade", "shared": true, "type": "lessThan", "value": 1}
+                        ]
+                      }
+                    ],
+                    "conditions": [
+                      {
+                        "childId": "efb2-1626-fb94-2867",
+                        "childName": "Guiding-Spirit",
+                        "field": "selections",
+                        "includeChildSelections": true,
+                        "scope": "root-entry",
+                        "shared": true,
+                        "type": "lessThan",
+                        "value": 1
+                      },
+                      {
+                        "childId": "ccdd-3987-11ed-90cd",
+                        "field": "selections",
+                        "includeChildSelections": false,
+                        "scope": "upgrade",
+                        "shared": true,
+                        "type": "notInstanceOf",
+                        "value": 1
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "field": "6f77-22ab-d258-f31e",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {"childId": "be3b-002c-05eb-b21f", "field": "selections", "includeChildSelections": true, "scope": "root-entry", "shared": true, "type": "atLeast", "value": 1}
                 ]
               },
               {"field": "category", "join": ", ", "scope": "upgrade", "type": "add", "value": "c13c-1717-f8a8-a8df"}
